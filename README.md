@@ -1,8 +1,8 @@
-# Viplava Koduri Manoj2320o5 - Air Quality Predictor
+# Viplava - Air Quality Predictor
 
 This project is organized as a normal Python project with separate files for data inspection, preprocessing, model training, evaluation, and the Streamlit application.
 
-Prepared by `Viplava Koduri Manoj2320o5`.
+Prepared by `Viplava`.
 
 ## Python files
 

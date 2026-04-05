@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 APP_ICON = "\U0001F30D"
 MODEL_FILENAME = "xgboost_aqi_model.pkl"
 DATA_FILENAME = "city_day.csv"
-AUTHOR_NAME = "Viplava Koduri Manoj2320o5"
+AUTHOR_NAME = "Viplava"
 APP_TITLE = "Air Quality Prediction System"
 
 
