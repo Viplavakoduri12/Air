@@ -1,4 +1,4 @@
-# Air Quality Predictor
+# Air Quality Prediction
 
 This project is organized as a normal Python project with separate files for data inspection, preprocessing, model training, evaluation, and the Streamlit application.
 
@@ -60,5 +60,5 @@ run_app.bat
 The executable will be created in:
 
 ```text
-dist/AirQualityPredictor/AirQualityPredictor.exe
+dist/AirQualityPrediction/AirQualityPrediction.exe
 ```

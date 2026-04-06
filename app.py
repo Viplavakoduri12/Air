@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 APP_ICON = "\U0001F30D"
 MODEL_FILENAME = "xgboost_aqi_model.pkl"
 DATA_FILENAME = "city_day.csv"
-APP_TITLE = "Air Quality Prediction System"
+APP_TITLE = "Air Quality Prediction"
 
 
 def resource_path(filename: str) -> Path:
@@ -27,7 +27,7 @@ def load_model(model_file: Path):
 
 
 st.set_page_config(
-    page_title="Air Quality Predictor",
+    page_title="Air Quality Prediction",
     page_icon=APP_ICON,
     layout="wide",
 )

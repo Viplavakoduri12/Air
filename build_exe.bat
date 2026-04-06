@@ -20,7 +20,7 @@ if not exist "xgboost_aqi_model.pkl" (
   --noconfirm ^
   --clean ^
   --onedir ^
-  --name AirQualityPredictor ^
+  --name AirQualityPrediction ^
   --collect-all streamlit ^
   --collect-all matplotlib ^
   --collect-all xgboost ^
