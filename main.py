@@ -1,6 +1,12 @@
-from pathlib import Path
 import os
 import sys
+from pathlib import Path
+
+project_dir = Path(__file__).resolve().parent
+local_deps_dir = project_dir / ".deps"
+
+if local_deps_dir.exists():
+    sys.path.insert(0, str(local_deps_dir))
 
 from streamlit.web import cli as stcli
 

@@ -1,6 +1,9 @@
 .venv/
+.venv312/
+.deps/
 __pycache__/
 *.pyc
 dist/
 build/
 *.spec
+streamlit.log

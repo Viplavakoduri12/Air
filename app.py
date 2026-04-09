@@ -81,15 +81,144 @@ color:white;
 [data-testid="stHeader"]{
 background: rgba(0,0,0,0);
 }
+.block-container{
+padding-top:2rem;
+}
 .title{
 text-align:center;
 font-size:45px;
 font-weight:bold;
+color:#f8fafc;
 }
 .subtitle{
 text-align:center;
 font-size:20px;
 margin-bottom:30px;
+color:#dbeafe;
+}
+.section-heading{
+color:#f8fafc;
+font-size:1.5rem;
+font-weight:700;
+margin:1.4rem 0 0.9rem;
+text-shadow:0 2px 8px rgba(0,0,0,0.25);
+}
+.aqi-card{
+background:rgba(255,255,255,0.12);
+border:1px solid rgba(255,255,255,0.2);
+border-radius:18px;
+overflow:hidden;
+backdrop-filter:blur(10px);
+box-shadow:0 16px 40px rgba(15,23,42,0.18);
+margin-bottom:1.3rem;
+}
+.aqi-table{
+width:100%;
+border-collapse:collapse;
+color:#f8fafc;
+}
+.aqi-table th,
+.aqi-table td{
+padding:0.9rem 1rem;
+text-align:left;
+border-bottom:1px solid rgba(255,255,255,0.14);
+}
+.aqi-table th{
+background:rgba(15,23,42,0.45);
+font-weight:700;
+letter-spacing:0.02em;
+}
+.aqi-table tr:last-child td{
+border-bottom:none;
+}
+.aqi-range{
+color:#e2e8f0;
+font-weight:600;
+}
+.category-good{
+color:#86efac;
+font-weight:700;
+}
+.category-moderate{
+color:#fde047;
+font-weight:700;
+}
+.category-poor{
+color:#fdba74;
+font-weight:700;
+}
+.category-hazardous{
+color:#fca5a5;
+font-weight:700;
+}
+div[data-testid="stNumberInput"] label,
+div[data-testid="stNumberInput"] label p{
+color:#f8fafc !important;
+font-weight:700 !important;
+}
+div[data-testid="stNumberInput"] [data-baseweb="input"]{
+background:transparent !important;
+border:none !important;
+box-shadow:none !important;
+}
+div[data-testid="stNumberInput"] [data-baseweb="input"] > div{
+background:rgba(15,23,42,0.82) !important;
+border:1px solid rgba(191,219,254,0.3) !important;
+border-radius:14px !important;
+}
+div[data-testid="stNumberInput"] input{
+color:#f8fafc !important;
+-webkit-text-fill-color:#f8fafc !important;
+background:transparent !important;
+font-weight:600 !important;
+}
+div[data-testid="stNumberInput"] input::placeholder{
+color:#cbd5e1 !important;
+opacity:1 !important;
+}
+div[data-testid="stNumberInput"] button{
+color:#f8fafc !important;
+background:rgba(30,41,59,0.95) !important;
+border-left:1px solid rgba(191,219,254,0.24) !important;
+opacity:1 !important;
+}
+div[data-testid="stNumberInput"] button:hover{
+background:rgba(51,65,85,0.95) !important;
+}
+div[data-testid="stNumberInput"] button:disabled,
+div[data-testid="stNumberInput"] button[disabled]{
+color:#e2e8f0 !important;
+background:rgba(30,41,59,0.95) !important;
+opacity:1 !important;
+}
+div[data-testid="stNumberInput"] button svg,
+div[data-testid="stNumberInput"] button span{
+color:inherit !important;
+fill:currentColor !important;
+stroke:currentColor !important;
+opacity:1 !important;
+}
+div[data-testid="stNumberInput"] button:disabled svg,
+div[data-testid="stNumberInput"] button[disabled] svg,
+div[data-testid="stNumberInput"] button:disabled span,
+div[data-testid="stNumberInput"] button[disabled] span{
+color:#e2e8f0 !important;
+fill:currentColor !important;
+stroke:currentColor !important;
+opacity:1 !important;
+}
+div[data-testid="stButton"] > button{
+background:linear-gradient(135deg,#f8fafc,#bfdbfe) !important;
+color:#0f172a !important;
+border:none !important;
+border-radius:12px !important;
+font-weight:700 !important;
+padding:0.7rem 1.5rem !important;
+box-shadow:0 14px 28px rgba(15,23,42,0.22);
+}
+div[data-testid="stButton"] > button:hover{
+background:linear-gradient(135deg,#ffffff,#dbeafe) !important;
+color:#020617 !important;
 }
 </style>
 """
@@ -104,20 +233,42 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown("### AQI Categories")
-st.table(
-    {
-        "AQI Range": ["0-50", "51-100", "101-200", "201+"],
-        "Category": [
-            "Good \U0001F7E2",
-            "Moderate \U0001F7E1",
-            "Poor \U0001F7E0",
-            "Hazardous \U0001F534",
-        ],
-    }
+st.markdown('<div class="section-heading">AQI Categories</div>', unsafe_allow_html=True)
+st.markdown(
+    """
+<div class="aqi-card">
+  <table class="aqi-table">
+    <thead>
+      <tr>
+        <th>AQI Range</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="aqi-range">0-50</td>
+        <td class="category-good">Good 🟢</td>
+      </tr>
+      <tr>
+        <td class="aqi-range">51-100</td>
+        <td class="category-moderate">Moderate 🟡</td>
+      </tr>
+      <tr>
+        <td class="aqi-range">101-200</td>
+        <td class="category-poor">Poor 🟠</td>
+      </tr>
+      <tr>
+        <td class="aqi-range">201+</td>
+        <td class="category-hazardous">Hazardous 🔴</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+""",
+    unsafe_allow_html=True,
 )
 
-st.markdown("### Enter Pollution Levels")
+st.markdown('<div class="section-heading">Enter Pollution Levels</div>', unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 
 with col1:
